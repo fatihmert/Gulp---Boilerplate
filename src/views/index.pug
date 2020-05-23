@@ -1,0 +1,11 @@
+extends master.pug
+
+include components/paginate
+
+block title
+    title Home Page
+
+block content
+    p This index page
+    +paginate()
+

@@ -1,0 +1,53 @@
+@mixin responsive($media) {
+  @if $media == small-phone {
+    @media only screen and (max-width: $bp-sm) { @content; }
+  }
+  @else if $media == phone {
+    @media only screen and (max-width: $bp-md) { @content; }
+  }
+  @else if $media == tablet {
+    @media only screen and (max-width: $bp-lg) { @content; }
+  }
+  @else if $media == desktop {
+    @media only screen and (max-width: $bp-xl) { @content; }
+  }
+  @else if $media == iphone678 {
+    @media only screen and (min-device-width : 375px) and (max-device-width : 667px) { @content; }
+  }
+  @else if $media == iphone678plus {
+    @media only screen and (min-device-width : 414px) and (max-device-width : 736px) { @content; }
+  }
+  @else if $media == iphone55s {
+    @media only screen and (min-device-width : 320px) and (max-device-width : 568px) { @content; }
+  }
+  @else if $media == iphonex {
+    @media only screen and (min-device-width : 375px) and (max-device-width : 812px) and (-webkit-device-pixel-ratio : 3) { @content; }
+  }
+  @else if $media == ipad {
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) { @content; }
+  }
+}
+
+// Source: https://css-tricks.com/snippets/css/fluid-typography/
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}

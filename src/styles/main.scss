@@ -1,0 +1,32 @@
+// Include abstracts
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+
+// Here 3.party, example bootstrap..
+//@import "node_modules/bootstrap/scss/functions";
+//@import "node_modules/bootstrap/scss/variables";
+//@import "node_modules/bootstrap/scss/mixins";
+
+// Include base props
+@import 'base/reset';
+@import 'base/typography';
+
+// Include layouts
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/sidebar';
+
+// Include components
+@import 'components/buttons';
+@import 'components/slider';
+
+// Include pages
+//@import 'pages/name';
+
+// Include themes
+
+@import 'themes/red';
+
+// Include your static(s) CSS
+@import "static.css";

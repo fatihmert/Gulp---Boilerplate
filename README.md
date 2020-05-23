@@ -70,5 +70,3 @@ npm run dev
 "gulp-sourcemaps": "^2.6.5",
 "gulp-uglify": "^3.0.2"
 ```
-
-

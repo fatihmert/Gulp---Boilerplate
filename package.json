@@ -9,7 +9,8 @@
     "dev": "gulp dev"
   },
   "keywords": [],
-  "author": "",
+  "author": "Fatih Mert Doğancan <fmdogancan95@gmail.com> (https://github.com/fatihmert)",
+  "repository": "github:fatihmert/Gulp---Boilerplate",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.26.7",
